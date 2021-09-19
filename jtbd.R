@@ -108,12 +108,15 @@ y = c(2, 6))
 
 #Definining global x and y variables
 x <- jtbd$Importance
-y <- jtbd$Satisfaction #The plot itself ggplot(jtbd, aes(x=Importance, y=Satisfaction)) +
+y <- jtbd$Satisfaction 
+
+#The plot itself 
+ggplot(jtbd, aes(x=Importance, y=Satisfaction)) +
 
 #A grey area like you would find in Tony Ulwick's Opportunity Landscape visualisation 
 geom_area(data = tri.ulw, aes(x = x, y = y), alpha=0.2, fill ="purple") + 
 
-#A trend line to show the data trend which may or may not be useful 
+#A trend line to show the data trend which may or may not be useful, this could be turned on by removing the '#'
 #geom_smooth(method = "lm", se = FALSE) + 
 
 #The triangle for OVERSERVED 
@@ -145,7 +148,7 @@ geom_text(data = labelover, aes(x = x, y = y, label = label), size=5) +
 geom_text(data = labeljust, aes(x = x, y = y, label = label), size=5) +
 geom_text(data = labelunder, aes(x = x, y = y, label = label), size=5) +
 
-#Our job labels
+#Our job labels (optional)
 #geom_label(aes(label = jtbd$Job), nudge_y = 0.24, nudge_x = 0.04, hjust="right", alpha=0.8, size=4) +
 
 #The points for our jobs
